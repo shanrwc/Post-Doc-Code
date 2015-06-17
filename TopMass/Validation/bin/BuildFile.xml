@@ -1,0 +1,44 @@
+<use   name="root"/>
+<use   name="roofit"/>
+<use   name="rootminuit2"/>
+<use   name="rootminuit"/>
+<use   name="rootcintex"/>
+<use   name="rootcore"/>
+<use   name="rootmlp"/>
+<use   name="rootrflx"/>
+
+<use   name="rootmathcore"/>
+<use   name="rootrio"/>
+<use   name="rootrint"/>
+<use   name="rootthread"/>
+<use   name="rootgeom"/>
+<use   name="rootxmlio"/>
+<use   name="roothistmatrix"/>
+<use   name="rootmath"/>
+<use   name="rootgpad"/>
+<use   name="rootfoam"/>
+<use   name="rootphysics"/>
+<use   name="rootspectrum"/>
+<use   name="rootgraphics"/>
+<use   name="rootinteractive"/>
+<use   name="roothtml"/>
+<use   name="rooteg"/>
+<use   name="rootgeompainter"/>
+<use   name="rootrgl"/>
+<use   name="rootguihtml"/>
+
+<use   name="FWCore/FWLite"/>
+
+
+<environment>
+  <bin   file="mergeTextFiles.cpp" name="mergeTextFiles"></bin>
+  <bin   file="addEventNumber.cpp" name="addEventNumber"></bin>	
+  <bin   file="applyCutsOnLHCO.cpp" name="applyCutsOnLHCO"></bin>
+  <bin   file="acceptanceTerm.cpp" name="acceptanceTerm"></bin>
+  <bin   file="gaussianSmear.cpp" name="gaussianSmear"></bin>
+  <bin   file="runPseudoExperiments.cpp" name="runPseudoExperiments"></bin>
+  <bin   file="processLikelihood.cpp" name="processLikelihood"></bin>
+  <bin   file="makeHistograms.cpp" name="makeHistograms"></bin>
+  <bin   file="calculateResults.cpp" name="calculateResults"></bin>
+</environment>
+

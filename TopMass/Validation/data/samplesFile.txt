@@ -1,0 +1,53 @@
+#Comments are any line that starts with a '#'
+#Give number of events per pseudoexperiment
+N_EVENTS: 9000
+
+#Give number to set the seed of the random number generator and value
+#used to iterate the seed
+RANDOM_SEED: 1
+SEED_INTERVAL: 1
+
+#Set resampling flag
+#Note that the sampleSelector which reads this file has no idea how many
+#times it will be asked to produce ensembles.  Turning off resampling means
+#events will not be reused inside a single ensemble, NOT that all ensembles
+#created will be unique.
+USE_RESAMPLING: yes
+
+#You must specify a normalization type
+NORMALIZATION_TYPE: muon
+
+#Applying acceptance corrections is optional
+#Recognized strings are 'validation' and 'muon_calibration', though
+#more can be added to acceptanceTools.h if needed
+APPLY_ACCEPTANCE: yes
+ACCEPTANCE_TYPE: electron_calibration
+
+#Use the following tag to apply a cut on the input trees used for pseudoexperiments
+#Cuts must be readable by a ROOT TTree, and so can only use the variables on the tree
+#or functions supported by classes on the tree.
+#This line must appear before any input files are listed, or the cut will not be
+#applied to the files.
+#APPLY_CUT: jet1.Pt()>60&&jet1_btag>0
+
+#Now give signal file, desired signal percentage in pseudoexperiment, and type
+#of event weight to use
+# event weight options are: NOMINAL, TRIGGER_UP, TRIGGER_DOWN, LEP_ID_UP, LEP_ID_DOWN, BTAG_UP, BTAG_DOWN, MISTAG_UP, MISTAG_DOWN, CROSS_SECTION_UP, CROSS_SECTION_DOWN, ACCEPTANCE_UP, ACCEPTANCE_DOWN
+SIGNAL_FILE: /afs/cern.ch/work/s/swalch/public/Calibration/CMSSW_7_1_0/src/Mass/Validation/LHCOTree_171.5_1.00_TTbar_electron_01_cutset_nominal.root 1.0 NOMINAL
+
+#Give however many background files, their desired sample percentages and type of event weight
+#Those percentages should add up to something less than 1.0
+#How much less will be checked against the signal fraction given above
+#BACKGROUND_FILE: /afs/cern.ch/work/s/swalch/public/Calibration/CMSSW_7_1_0/src/Mass/Validation/LHCOTree_171.5_1.00_TTbar_mu_background_01_cutset_nominal.root 0.094 NOMINAL
+#BACKGROUND_FILE: /afs/cern.ch/work/s/swalch/public/Calibration/CMSSW_7_1_0/src/Mass/Validation/LHCOTree_171.5_1.00_WJetsToLNu_TuneZ2_mu_background_01_cutset_nominal.root 0.0071 NOMINAL
+#BACKGROUND_FILE: /afs/cern.ch/work/s/swalch/public/Calibration/CMSSW_7_1_0/src/Mass/Validation/LHCOTree_171.5_1.00_DYJetsToLL_mu_background_01_cutset_nominal.root 0.0013 NOMINAL
+
+#Give mass hypothesis range.  Hypotheses are retained if greater (less) than or equal
+#to the low (high) limit given.  These limits will determine if 1D or 2D
+#fits are performed.
+LOW_MASS_HYPOTHESIS: 155.0
+HIGH_MASS_HYPOTHESIS: 195.0
+
+#Give JES hypothesis range
+LOW_JES_HYPOTHESIS: 0.9
+HIGH_JES_HYPOTHESIS: 1.1

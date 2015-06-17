@@ -1,0 +1,42 @@
+#Comments are any line that starts with an '#'
+
+#Give directory paths and file names for output table and histograms
+OUTPUT_TABLE: data/calibration_table.txt
+OUTPUT_HISTOGRAMS: data/calibration_results.root
+
+#List one and only one file with data results
+#If omitted, the script will use 172.5 +/1.0 GeV as the data value
+#Note: this should NOT be something output from the makeHistograms script,
+#and the function does not expect it to be!
+#DATA: MassJES_Bkg_M_169.5_JES_1_NOMINAL.root
+
+#List all files to be used to create a calibration curve
+#These must be files produced by makeHistograms.root
+#At least two files must be given; otherwise calibration and systematic
+#estimation will be skipped.
+CALIBRATION: data/signal-only-PEs-adjustedparams/MassJES_Bkg_M_166.5_JES_1_NOMINAL_sum_psExp.root
+CALIBRATION: data/signal-only-PEs-adjustedparams/MassJES_Bkg_M_169.5_JES_1_NOMINAL_sum_psExp.root
+CALIBRATION: data/signal-only-PEs-adjustedparams/MassJES_Bkg_M_171.5_JES_1_NOMINAL_sum_psExp.root
+CALIBRATION: data/signal-only-PEs-adjustedparams/MassJES_Bkg_M_172.5_JES_1_NOMINAL_sum_psExp.root
+CALIBRATION: data/signal-only-PEs-adjustedparams/MassJES_Bkg_M_173.5_JES_1_NOMINAL_sum_psExp.root
+CALIBRATION: data/signal-only-PEs-adjustedparams/MassJES_Bkg_M_175.5_JES_1_NOMINAL_sum_psExp.root
+CALIBRATION: data/signal-only-PEs-adjustedparams/MassJES_Bkg_M_178.5_JES_1_NOMINAL_sum_psExp.root
+
+#Turns on or off calibration of uncertainty from pull width
+CALIBRATE_UNCERTAINTY: yes
+
+#List all files containing systematic variation results
+#If only one file of a type is listed, the difference between the systematic
+#result and the point with the same gen-mass on the calibration curve is the
+#uncertainty.  If more than one file of a type is listed, a straight line will 
+#be fitted to these points and the differnce between this line and the
+#calibration line at the measured mass is the uncertainty.
+#SYSTEMATIC: <sfile_1> <syst_name>
+#SYSTEMATIC: data/MassJES_Bkg_0001_M_172.5_JES_1_TRIGGER_UP_sum_psExp.root TRIGGER_UP
+#SYSTEMATIC: data/MassJES_Bkg_0001_M_172.5_JES_1_TRIGGER_DOWN_sum_psExp.root TRIGGER_DOWN
+#SYSTEMATIC: data/MassJES_Bkg_0001_M_172.5_JES_1_LEP_ID_UP_sum_psExp.root LEP_ID_UP
+#SYSTEMATIC: data/MassJES_Bkg_0001_M_172.5_JES_1_LEP_ID_DOWN_sum_psExp.root LEP_ID_DOWN
+#SYSTEMATIC: data/MassJES_Bkg_0001_M_172.5_JES_1_BTAG_UP_sum_psExp.root BTAG_UP
+#SYSTEMATIC: data/MassJES_Bkg_0001_M_172.5_JES_1_BTAG_DOWN_sum_psExp.root BTAG_DOWN
+#SYSTEMATIC: data/MassJES_Bkg_0001_M_172.5_JES_1_MISTAG_UP_sum_psExp.root MISTAG_UP
+#SYSTEMATIC: data/MassJES_Bkg_0001_M_172.5_JES_1_MISTAG_DOWN_sum_psExp.root MISTAG_DOWN
